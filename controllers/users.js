@@ -1,4 +1,4 @@
-const res = require('express/lib/response')
+const bcrypt = require('bcrypt')
 const User = require('../models/user')
 const usersRouter = require('express').Router()
 const EMAIL_REGEX = /.+@student\.ubc\.ca/
@@ -9,9 +9,9 @@ usersRouter.get('/', async ( request, response) => {
 })
 
 usersRouter.post('/', async ( request, response) => {
-    const { name, email } = request.body
-    if (!name || !email) {
-        return res.status(400).json({ 'message': 'Name and email required'})
+    const { name, email, password } = request.body
+    if (!name || !email || !password) {
+        return response.status(400).json({ 'message': 'All fields required'})
     }
 
     const existingUser = await User.findOne({ email }).exec()
@@ -22,15 +22,18 @@ usersRouter.post('/', async ( request, response) => {
     }
 
     if (EMAIL_REGEX.test(email)) {
+        const saltRounds = 10
+        const passwordHash = await bcrypt.hash(password, saltRounds)
         const user = new User({
             name,
-            email
+            email,
+            passwordHash
         })
 
         const savedUser = await user.save()
         response.status(201).json(savedUser)
     } else {
-        return res.status(400).json({ 'message': 'Invalid UBC email'})
+        return response.status(400).json({ 'message': 'Invalid UBC email'})
     }
 })
 

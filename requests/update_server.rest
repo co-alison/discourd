@@ -1,0 +1,8 @@
+PUT http://localhost:3001/api/servers/62dc626cac9560023617bc29
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWxpc29uIiwiaWQiOiI2MmRjNjE4MTUwMDQ4N2Y1MTRlMmRkYmMiLCJpYXQiOjE2NTg2MTAxNzR9.f9rdwKg4djyFcpcHkQ0k_KMaZVM5iq9zrNAsxefbvNA
+
+{
+    "course": "WRDS 150",
+    "url": "discord.com"
+}
