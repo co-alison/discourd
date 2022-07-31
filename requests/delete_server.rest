@@ -1,0 +1,2 @@
+DELETE http://localhost:3001/api/servers/62dc626cac9560023617bc29
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWxpc29uIiwiaWQiOiI2MmRjNjE4MTUwMDQ4N2Y1MTRlMmRkYmMiLCJpYXQiOjE2NTkxMzA4MjV9.kLWoDZqiMpcAwlAbJ5B_Us6nKVJq9mFiYNeCa5kwZ4A

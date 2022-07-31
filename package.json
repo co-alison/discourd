@@ -26,6 +26,8 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.4.6",
     "node": "^18.5.0",
-    "nodemon": "^2.0.19"
+    "nodemailer": "^6.7.7",
+    "nodemon": "^2.0.19",
+    "sib-api-v3-sdk": "^8.4.0"
   }
 }

@@ -17,6 +17,12 @@ loginRouter.post('/', async (request, response) => {
         })
     }
 
+    if (user.status != 'Active') {
+        return response.status(401).send({
+            message: 'Pending account. Please verify your email.'
+        })
+    }
+
     const userForToken = {
         name: user.name,
         id: user._id

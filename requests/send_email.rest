@@ -1,0 +1,8 @@
+POST http://localhost:3001/api/email
+Content-Type: application/json
+
+{
+    "to": "ubcdiscourd@gmail.com",
+    "subject": "Test Subject Outlook",
+    "text": "Test text Outlook"
+}

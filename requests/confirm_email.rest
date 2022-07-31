@@ -1,0 +1,1 @@
+GET http://localhost:3001/api/confirm/xGKC8Dt5OZ7sAlo4fI5Co9fWq

@@ -3,6 +3,6 @@ Content-Type: application/json
 
 {
     "name": "Alison",
-    "email": "alison03@student.ubc.ca",
+    "email": "test@student.ubc.ca",
     "password": "fullstack"
 }

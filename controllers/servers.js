@@ -7,10 +7,10 @@ serversRouter.get('/', async (request, response) => {
 })
 
 serversRouter.post('/', async (request, response) => {
-    const { course, url } = request.body
+    const { name, url } = request.body
 
     const server = new Server({
-        course,
+        name,
         url
     })
 
@@ -28,6 +28,11 @@ serversRouter.put('/:id', async (request, response) => {
     )
 
     response.status(200).json(updatedServer)
+})
+
+serversRouter.delete('/:id', async (request, response) => {
+    await Server.findByIdAndDelete(request.params.id)
+    response.status(204).end()
 })
 
 module.exports = serversRouter

@@ -3,7 +3,16 @@ const mongoose = require('mongoose')
 const userSchema = new mongoose.Schema({
     name: String,
     email: String,
-    passwordHash: String
+    passwordHash: String,
+    status: {
+        type: String,
+        enum: ['Pending', 'Active'],
+        default: 'Pending'
+    },
+    confirmationCode: {
+        type: String,
+        unique: true
+    }
 })
 
 userSchema.set('toJSON', {
